@@ -29,6 +29,9 @@ Create a simple iOS application using SwiftUI and the MVVM architectural pattern
  2. Navigate to the project directory:
     Open the project in Xcode
 
+ 2. Will find local Swift Package Manager (FoodicsApp)
+    Open Sources folder to find the implementation 
+
 Build and run the project on a simulator or a device.
 
 ## Usage
