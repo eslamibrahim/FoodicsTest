@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RecipesListUseCaseImplementation: RecipesListUseCase {
+public final class RecipesListUseCaseImplementation: RecipesListUseCase {
     
     // MARK: - Properties
     
@@ -21,11 +21,11 @@ public struct RecipesListUseCaseImplementation: RecipesListUseCase {
     
     // MARK: - APIs
     
-    func searchforRecipes(skip: Int, sortBy: String?, searchQuery: String?) async throws -> Recipes {
+    public func searchforRecipes(skip: Int, sortBy: String?, searchQuery: String?) async throws -> Recipes {
         try await repository.searchforRecipes(skip: skip, sortBy: sortBy, searchQuery: searchQuery)
     }
 
-    func fetchRecipes(skip: Int, sortBy: String?) async throws -> Recipes {
+    public func fetchRecipes(skip: Int, sortBy: String?) async throws -> Recipes {
         try await repository.fetchRecipes(skip: skip, sortBy: sortBy)
     }
     

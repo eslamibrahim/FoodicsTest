@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
- struct RecipesListDTOMapper {
+ public struct RecipesListDTOMapper {
     
     // MARK: - Properties
     
@@ -16,13 +16,13 @@ import Foundation
     
     // MARK: - Init
     
-     init(response: RecipesResponse) {
+    public init(response: RecipesResponse) {
         self.response = response
     }
     
     // MARK: - APIs
     
-     func callAsFunction() -> Recipes {
+    public func callAsFunction() -> Recipes {
          return Recipes.init(recipes: response.recipes.compactMap({ recipeResponse in
              Recipe(id: recipeResponse.id, name: recipeResponse.name, ingredients: recipeResponse.ingredients, instructions: recipeResponse.instructions, prepTimeMinutes: recipeResponse.prepTimeMinutes, cookTimeMinutes: recipeResponse.cookTimeMinutes, servings: recipeResponse.servings, difficulty: recipeResponse.difficulty, cuisine: recipeResponse.cuisine, caloriesPerServing: recipeResponse.caloriesPerServing, tags: recipeResponse.tags, image: recipeResponse.image, rating: recipeResponse.rating, reviewCount: recipeResponse.reviewCount, mealType: recipeResponse.mealType)
          }), pagination: .init(total: response.total, skip: response.skip, limit: response.limit))

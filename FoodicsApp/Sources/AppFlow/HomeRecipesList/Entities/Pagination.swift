@@ -17,7 +17,7 @@ public struct Pagination {
         self.limit = limit
     }
     
-    var isHaveNextPage: Bool {
+   public var isHaveNextPage: Bool {
         return total > skip + limit
     }
     

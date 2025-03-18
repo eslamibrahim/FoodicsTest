@@ -8,7 +8,7 @@
 @MainActor
 public struct Recipe: Identifiable, Hashable {
     public let id: Int
-    let name: String
+    public let name: String
     let ingredients: [String]
     let instructions: [String]
     let prepTimeMinutes: Int
@@ -44,9 +44,9 @@ public struct Recipe: Identifiable, Hashable {
 
 public struct Recipes {
     
-     let recipes: [Recipe]
+    public let recipes: [Recipe]
     
-     let pagination: Pagination
+    public let pagination: Pagination
     
     public init(recipes: [Recipe], pagination: Pagination) {
         self.recipes = recipes
@@ -55,12 +55,12 @@ public struct Recipes {
 }
 
 
-struct RecipesResponse: Codable {
+public struct RecipesResponse: Codable {
     let recipes: [RecipeResponse]
     let total, skip, limit: Int
 }
 
-struct RecipeResponse: Codable {
+public struct RecipeResponse: Codable {
 
     let id: Int
     let name: String

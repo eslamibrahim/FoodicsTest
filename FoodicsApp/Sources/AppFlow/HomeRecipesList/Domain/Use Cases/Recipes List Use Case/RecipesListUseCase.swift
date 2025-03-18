@@ -7,7 +7,7 @@
 import Foundation
 
 @MainActor
-protocol RecipesListUseCase {
+public protocol RecipesListUseCase {
     
     func searchforRecipes(skip: Int, sortBy: String?, searchQuery: String?) async throws -> Recipes
     

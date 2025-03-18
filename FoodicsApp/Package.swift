@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "FoodicsApp",
     defaultLocalization: "en",
-    platforms: [.iOS(.v17), .macOS(.v13)],
+    platforms: [.iOS(.v18), .macOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -32,7 +32,10 @@ let package = Package(
                 ]),
         
         .target(
-            name: "NetworkLayer"),
+            name: "NetworkLayer",
+            resources: [
+                .process("Resources") // Include all files in the Resources folder
+            ]),
         
         .target(
             name: "AppFlow",

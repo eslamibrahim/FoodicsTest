@@ -1,4 +1,7 @@
 import XCTest
+import NetworkLayer
+import AppFlow
+
 @testable import FoodicsApp
 
 final class FoodicsAppTests: XCTestCase {

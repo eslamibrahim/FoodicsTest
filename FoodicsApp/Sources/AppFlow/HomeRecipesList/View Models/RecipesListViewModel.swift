@@ -10,10 +10,10 @@ import Combine
 
 public class RecipesListViewModel: ObservableObject {
     
-    struct Status {
+    public struct Status {
         var state: ViewState = .idle
-        var searchValue: String = ""
-        var sortBy: SortBy?
+        public var searchValue: String = ""
+        var sortBy: SortBy? = .id
         var isLoading: Bool {
             switch state {
             case .loading:
@@ -38,11 +38,11 @@ public class RecipesListViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @Published var status: Status = .init()
+    @Published public var status: Status = .init()
     
-    var currentRecipes: Recipes?
+    public var currentRecipes: Recipes?
     
-    var filteredRecipes: Recipes?
+    public var filteredRecipes: Recipes?
 
     
     @Published var didReachRecipe: Int = 0
@@ -54,7 +54,7 @@ public class RecipesListViewModel: ObservableObject {
     
     // MARK: - Init
     
-    init(
+   public init(
         recipesListUseCase: RecipesListUseCase
     ) {
         self.recipesListUseCase = recipesListUseCase
@@ -108,9 +108,8 @@ public class RecipesListViewModel: ObservableObject {
     }
     
     // MARK: - Methods
-    
     @MainActor
-    private func getRecipes(sortBy: String?) async throws  {
+    public func getRecipes(sortBy: String?) async throws  {
         status.state = .loading
         let response =  try await recipesListUseCase.fetchRecipes(skip: currentRecipes?.pagination.skipNextPage ?? 0, sortBy: sortBy)
         status.state = .loaded(response)
@@ -134,15 +133,17 @@ public class RecipesListViewModel: ObservableObject {
     // MARK: - Filter
     
     private func setFilteredRecipes() {
-        guard let currentRecipes, !status.searchValue.isEmpty else {
-            filteredRecipes = currentRecipes
-            return
+        if let currentRecipes {
+            guard !status.searchValue.isEmpty else {
+                filteredRecipes = currentRecipes
+                status.state = .loaded(filteredRecipes ?? currentRecipes)
+                return
+            }
+            filteredRecipes = .init(recipes: currentRecipes.recipes.filter { recipe in
+                let searchPredicate = status.searchValue.isEmpty ? true : recipe.name.localizedStandardContains(status.searchValue)
+                return searchPredicate
+            }, pagination: currentRecipes.pagination)
+            status.state = .loaded(filteredRecipes ?? currentRecipes)
         }
-
-        filteredRecipes = .init(recipes: currentRecipes.recipes.filter { recipe in
-            let searchPredicate = status.searchValue.isEmpty ? true : recipe.name.localizedStandardContains(status.searchValue)
-            return searchPredicate
-        }, pagination: currentRecipes.pagination)
-        status.state = .loaded(filteredRecipes ?? currentRecipes)
     }
 }

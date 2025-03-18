@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public protocol LocalRepository {
 
     mutating func getData<Value: Codable>() async throws -> Value
