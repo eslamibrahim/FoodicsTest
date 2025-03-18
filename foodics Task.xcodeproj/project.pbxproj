@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A641812A2D87453000A1A365 /* FoodicsApp in Frameworks */ = {isa = PBXBuildFile; productRef = A64181292D87453000A1A365 /* FoodicsApp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A64180FB2D873ABC00A1A365 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		A64180EA2D873ABA00A1A365 /* foodics Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foodics Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64180FA2D873ABC00A1A365 /* foodics TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foodics TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64181042D873ABC00A1A365 /* foodics TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foodics TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64181172D87431500A1A365 /* FoodicsApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FoodicsApp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A641812A2D87453000A1A365 /* FoodicsApp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +81,11 @@
 		A64180E12D873ABA00A1A365 = {
 			isa = PBXGroup;
 			children = (
+				A64181172D87431500A1A365 /* FoodicsApp */,
 				A64180EC2D873ABA00A1A365 /* foodics Task */,
 				A64180FD2D873ABC00A1A365 /* foodics TaskTests */,
 				A64181072D873ABC00A1A365 /* foodics TaskUITests */,
+				A64181282D87453000A1A365 /* Frameworks */,
 				A64180EB2D873ABA00A1A365 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +98,13 @@
 				A64181042D873ABC00A1A365 /* foodics TaskUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A64181282D87453000A1A365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +127,7 @@
 			);
 			name = "foodics Task";
 			packageProductDependencies = (
+				A64181292D87453000A1A365 /* FoodicsApp */,
 			);
 			productName = "foodics Task";
 			productReference = A64180EA2D873ABA00A1A365 /* foodics Task.app */;
@@ -399,6 +415,7 @@
 				DEVELOPMENT_TEAM = K4EFQERVV4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "foodics-Task-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +445,7 @@
 				DEVELOPMENT_TEAM = K4EFQERVV4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "foodics-Task-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -558,6 +576,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A64181292D87453000A1A365 /* FoodicsApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FoodicsApp;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A64180E22D873ABA00A1A365 /* Project object */;
 }
