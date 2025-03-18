@@ -20,21 +20,6 @@ Create a simple iOS application using SwiftUI and the MVVM architectural pattern
   - An image
   - A long description
 
-### Networking
-- Fetch data using **Combine** or **async/await** (structured concurrency).
-- Properly handle loading states and errors.
-
-### Testing
-- Implement **Unit Tests** for the networking layer and view models.
-
-### Bonus Points
-- Use **Dependency Injection** for the network service.
-- Implement **pull-to-refresh** functionality.
-- Implement **pagination** for large lists.
-- Implement **search** and **sort** functionality for the Recipes list based on APIs.
-- Include **UI Tests** using **XCTest**.
-- Enhance the user experience with animations or styling.
-
 ## Installation
 
 1. Clone the repository:
