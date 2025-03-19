@@ -49,10 +49,6 @@ Unit tests can be run in Xcode using the Test navigator.
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ##  Acknowledgements
 DummyJSON API for providing sample data.
 SwiftUI and Combine for modern iOS development.
